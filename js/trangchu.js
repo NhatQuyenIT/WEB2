@@ -11,7 +11,7 @@ window.onload = function () {
   // autocomplete(document.getElementById('search-box'), list_products);
 
   // thêm tags (từ khóa) vào khung tìm kiếm
-  var tags = ["Samsung", "Apple", "Onikuma", "Marvel", "Logitech"];
+  var tags = ["Samsung", "Apple", "Onikuma", "Dareu", "Hoco"];
   for (var t of tags) addTags(t, "index.php?search=" + t);
 
   // =================== web 2 tìm nâng cao ================
@@ -142,7 +142,7 @@ function setupCompany() {
     success: function (data, status, xhr) {
       DataCompany = data;
       for (var c of data) {
-        addCompany("img/company/" + c.HinhAnh, c.MaLSP);
+        addCompany("img/localbrands/" + c.HinhAnh, c.MaLSP);
       }
     },
     error: function (e) {
