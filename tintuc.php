@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tin tức - Thế giới điện thoại</title>
-  <link rel="shortcut icon" href="img/favicon.ico" />
+  <title>Tin tức - Thế giới - Tai nghe</title>
+  <link rel="shortcut icon" href="img/Logo.ico" />
 
   <!-- Load font awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -14,7 +14,7 @@
 
   <!-- our files -->
   <!-- css -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/MyStyle.css">
   <link rel="stylesheet" href="css/topnav.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/taikhoan.css">
@@ -39,71 +39,53 @@
 
       <script>
         let tintuc = [{
-          title: 'Đánh giá smartphone chip S660, RAM 8 GB, giá 6,99 triệu tại Việt Nam',
-          a: "http://doanhnghiepvn.vn/cong-nghe/danh-gia-smartphone-chip-s660-ram-8-gb-gia-6-99-trieu-tai-viet-nam/2018112603315443",
-          img: "img/tintuc/tintuc1.png",
-          source: "Doanh ngiệp",
+          title: 'Khám phá dòng sản phẩm Samsung Galaxy Buds',
+          a: "https://www.samsung.com/vn/audio-sound/?product1=sm-r510nlvaxxv&product2=sm-r177nzkaxxv&product3=sm-r400nzaaxxv",
+          img: "img/tintuc/tintuc1.jpg",
+          source: "Samsung",
           time: "3 giờ"
         }, {
-          title: 'Khám phá smartphone màn hình gập được đầu tiên của Samsung',
-          a: "https://thanhnien.vn/cong-nghe/kham-pha-smartphone-man-hinh-gap-duoc-dau-tien-cua-samsung-1027111.html",
-          img: "img/tintuc/tintuc2.png",
-          source: "Thanh niên",
+          title: 'AirPods (thế hệ thứ 3) với Hộp Sạc Lightning',
+          a: "https://www.apple.com/vn/shop/product/MPNY3ZP/A/airpods-3rd-generation-with-lightning-charging-case",
+          img: "img/tintuc/tintuc2.jpg",
+          source: "Apple",
           time: "6 giờ"
         }, {
-          title: 'Doanh số iPhone XS và iPhone XR thảm hại, Apple sản xuất lại iPhone X',
-          a: "https://vov.vn/cong-nghe/doanh-so-iphone-xs-va-iphone-xr-tham-hai-apple-san-xuat-lai-iphone-x-843717.vov",
-          img: "img/tintuc/tintuc3.png",
-          source: "VOV",
+          title: 'Dòng 1000X viết lại các quy tắc về trải nghiệm nghe không gián đoạn.',
+          a: "https://www.sony.com.vn/headphones",
+          img: "img/tintuc/tintuc3.jpg",
+          source: "Sony",
           time: "6 giờ"
         }, {
-          title: 'Chiếc điện thoại thông minh này của LG sẽ có tới 16 Camera',
-          a: "http://vietq.vn/chiec-dien-thoai-thong-minh-nay-cua-lg-se-co-toi-16-camera-d151674.html",
-          img: "img/tintuc/tintuc4.png",
-          source: "VietQ",
+          title: 'Tai nghe Sennheiser MOMENTUM 4 Wireless ra mắt, giá 9,490,000 VND',
+          a: "https://congngheviet.com/tai-nghe-sennheiser-momentum-4-wireless-ra-mat-gia-9490000-vnd/",
+          img: "img/tintuc/tintuc4.jpg",
+          source: "Congngheviet",
           time: "13 giờ"
         }, {
-          title: 'Những tiêu chí bạn không nên bỏ qua khi mua smartphone 2018',
-          a: "https://news.zing.vn/nhung-tieu-chi-ban-khong-nen-bo-qua-khi-mua-smartphone-2018-post894509.html",
-          img: "img/tintuc/tintuc5.png",
-          source: "Zing",
+          title: 'Jabra’s New Elite 4 Earbuds Finally Get ANC',
+          a: "https://techgit.net/jabras-new-elite-4-earbuds-finally-get-anc/",
+          img: "img/tintuc/tintuc5.jpg",
+          source: "techgit",
           time: "9 giờ"
         }, {
-          title: 'Doanh số iPhone XS và iPhone XR thảm hại, Apple sản xuất lại iPhone X',
-          a: "https://vov.vn/cong-nghe/doanh-so-iphone-xs-va-iphone-xr-tham-hai-apple-san-xuat-lai-iphone-x-843717.vov",
-          img: "img/tintuc/tintuc3.png",
-          source: "VOV",
+          title: 'Dòng 1000X viết lại các quy tắc về trải nghiệm nghe không gián đoạn.',
+          a: "https://www.sony.com.vn/headphones",
+          img: "img/tintuc/tintuc3.jpg",
+          source: "Sony",
           time: "6 giờ"
         }, {
-          title: 'Chiếc điện thoại thông minh này của LG sẽ có tới 16 Camera',
-          a: "http://vietq.vn/chiec-dien-thoai-thong-minh-nay-cua-lg-se-co-toi-16-camera-d151674.html",
-          img: "img/tintuc/tintuc4.png",
-          source: "VietQ",
+          title: 'Tai nghe Sennheiser MOMENTUM 4 Wireless ra mắt, giá 9,490,000 VND',
+          a: "https://congngheviet.com/tai-nghe-sennheiser-momentum-4-wireless-ra-mat-gia-9490000-vnd/",
+          img: "img/tintuc/tintuc4.jpg",
+          source: "Congngheviet",
           time: "13 giờ"
         }, {
-          title: 'Những tiêu chí bạn không nên bỏ qua khi mua smartphone 2018',
-          a: "https://news.zing.vn/nhung-tieu-chi-ban-khong-nen-bo-qua-khi-mua-smartphone-2018-post894509.html",
-          img: "img/tintuc/tintuc5.png",
-          source: "Zing",
-          time: "9 giờ"
-        }, {
-          title: 'Doanh số iPhone XS và iPhone XR thảm hại, Apple sản xuất lại iPhone X',
-          a: "https://vov.vn/cong-nghe/doanh-so-iphone-xs-va-iphone-xr-tham-hai-apple-san-xuat-lai-iphone-x-843717.vov",
-          img: "img/tintuc/tintuc3.png",
-          source: "VOV",
-          time: "6 giờ"
-        }, {
-          title: 'Chiếc điện thoại thông minh này của LG sẽ có tới 16 Camera',
-          a: "http://vietq.vn/chiec-dien-thoai-thong-minh-nay-cua-lg-se-co-toi-16-camera-d151674.html",
-          img: "img/tintuc/tintuc4.png",
-          source: "VietQ",
-          time: "13 giờ"
-        }, {
-          title: 'Những tiêu chí bạn không nên bỏ qua khi mua smartphone 2018',
-          a: "https://news.zing.vn/nhung-tieu-chi-ban-khong-nen-bo-qua-khi-mua-smartphone-2018-post894509.html",
-          img: "img/tintuc/tintuc5.png",
-          source: "Zing",
-          time: "9 giờ"
+          title: 'Khám phá dòng sản phẩm Samsung Galaxy Buds',
+          a: "https://www.samsung.com/vn/audio-sound/?product1=sm-r510nlvaxxv&product2=sm-r177nzkaxxv&product3=sm-r400nzaaxxv",
+          img: "img/tintuc/tintuc1.jpg",
+          source: "Samsung",
+          time: "3 giờ"
         }, ]
 
         for (let t of tintuc) {

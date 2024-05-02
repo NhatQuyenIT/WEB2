@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Liên hệ - Thế giới điện thoại</title>
-  <link rel="shortcut icon" href="img/favicon.ico" />
+  <title>Liên hệ - Thế giới - Tai nghe</title>
+  <link rel="shortcut icon" href="img/Logo.ico" />
 
   <!-- Load font awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,12 +17,12 @@
 
   <!-- our files -->
   <!-- css -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/MyStyle.css">
   <link rel="stylesheet" href="css/topnav.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/taikhoan.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/lienhe.css">
+  <link rel="stylesheet" href="css/LienHe.css">
 
   <!-- js -->
   <script src="data/products.js"></script>
@@ -48,7 +48,7 @@
             <b>Địa chỉ:</b> 273 An Dương Vương, phường 3, Quận 5, TPHCM<br /><br />
             <b>Telephone:</b> 028 3835 4409<br /><br />
             <b>Hotline:</b> 097777777 - CSKH: 028 9996 777<br /><br />
-            <b>Website:</b> <a href="https://github.com/HoangTran0410/DoAn_Web1">Github</a> <br /><br />
+            <b>Website:</b> <a href="https://github.com/NhatQuyenIT/WEB2">Github</a> <br /><br />
             <b>E-mail:</b> DoAn@gmail.com<br /><br />
             <b>Mã số thuế:</b> 01 02 03 04 05<br /><br />
             <b>Tài khoản ngân hàng :</b><br /><br />
@@ -56,7 +56,7 @@
             <b>Tại Ngân hàng:</b> Agribank Chi nhánh Sài Gòn<br /><br /><br /><br />
             <b>Quý khách có thể gửi liên hệ tới chúng tôi bằng cách hoàn tất biểu mẫu dưới đây. Chúng tôi
               sẽ trả lời thư của quý khách, xin vui lòng khai báo đầy đủ. Hân hạnh phục vụ và chân thành
-              cảm ơn sự quan tâm, đóng góp ý kiến đến Smartphone Store.</b>
+              cảm ơn sự quan tâm, đóng góp ý kiến đến Thế giới - Tai nghe.</b>
           </p>
         </div>
         <div class="info-right">
@@ -120,10 +120,9 @@
             </tr>
             <script>
               var thongtin = [
-                ["Trần Văn Hoàng", "3117410091", "Nam", "DCT1175", "%"],
-                ["Đàm Thế Hào", "3117410065", "Nam", "DCT1175", "%"],
-                ["Huỳnh Trung Hiển", "3117410072", "Nam", "DCT1173", "%"],
-                ["Hoàng Hiệp", "3117410074", "Nam", "DCT1175", "%"]
+                ["Lê Song Nhật Quyền", "3122411174", "Nam", "DCT122C3", "%"],
+                ["Lương Thị Thùy Quyên", "3122411172", "Nữ", "DCT122C3", "%"],
+                ["Nguyễn Ngọc Huyền", "3121411090", "Nữ", "DCT121C5", "%"],
               ]
               for (var i = 0; i < thongtin.length; i++) {
                 document.write(

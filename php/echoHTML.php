@@ -35,7 +35,7 @@ function addHeader()
         <div style="display: none;" class="smallmenu" id="closemenu" onclick="smallmenu(0)">×</div>
         <div class="logo">
             <a href="index.php">
-                <img src="img/logo.jpg" alt="Trang chủ Smartphone Store" title="Trang chủ Smartphone Store">
+                <img src="img/Logo.png" alt="Trang chủ Smartphone Store" title="Trang chủ Smartphone Store">
             </a>
         </div> <!-- End Logo -->
 
@@ -256,8 +256,8 @@ function addFooter()
     <!-- ============== Footer ============= -->
     <div class="copy-right">
         <p>
-            All rights reserved © 2018-' . date("Y") . ' - Designed by
-            <span style="color: #eee; font-weight: bold">H-group</span>
+            All rights reserved © 2023-' . date("Y") . ' - Designed by
+            <span style="color: #eee; font-weight: bold">Group A15</span>
         </p>
     </div>';
 }

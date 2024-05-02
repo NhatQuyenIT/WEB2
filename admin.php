@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Admin - Thế giới điện thoại</title>
-    <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Admin - Thế giới tai nghe</title>
+    <link rel="shortcut icon" href="img/myicon.ico" />
 
     <!-- Load font awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"

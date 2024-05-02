@@ -7,8 +7,8 @@
 	<!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
-	<title>Thế giới điện thoại</title>
-	<link rel="shortcut icon" href="img/favicon.ico" />
+	<title>Thế giới tai nghe</title>
+	<link rel="shortcut icon" href="img/myicon.ico" />
 
 	<!-- Load font awesome icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
@@ -34,7 +34,7 @@
 
 	<!-- our files -->
 	<!-- css -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/MyStyle.css">
 	<link rel="stylesheet" href="css/topnav.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/banner.css">
@@ -45,7 +45,7 @@
 	<link rel="stylesheet" href="css/footer.css">
 	<!-- js -->
 	<script src="js/dungchung.js"></script>
-	<script src="js/trangchu.js"></script>
+	<script src="js/TrangChu.js"></script>
 
 	<?php require_once "php/echoHTML.php"; ?>
 </head>

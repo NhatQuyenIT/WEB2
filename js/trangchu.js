@@ -11,7 +11,7 @@ window.onload = function () {
   // autocomplete(document.getElementById('search-box'), list_products);
 
   // thêm tags (từ khóa) vào khung tìm kiếm
-  var tags = ["Samsung", "iPhone", "Coolpad", "Oppo", "Mobi"];
+  var tags = ["Samsung", "Apple", "Onikuma", "Marvel", "Logitech"];
   for (var t of tags) addTags(t, "index.php?search=" + t);
 
   // =================== web 2 tìm nâng cao ================
@@ -67,19 +67,12 @@ window.onload = function () {
   addPromotion("moiramat");
   addPromotion("giareonline");
 
-  // Thêm chọn số sao
-  addStarFilter(0);
-  addStarFilter(1);
-  addStarFilter(2);
-  addStarFilter(3);
-  addStarFilter(4);
-  addStarFilter(5);
 
   // Thêm chọn sắp xếp
   addSortFilter("asc", "DonGia", "Giá tăng dần");
   addSortFilter("des", "DonGia", "Giá giảm dần");
-  addSortFilter("asc", "SoSao", "Sao tăng dần");
-  addSortFilter("des", "SoSao", "Sao giảm dần");
+  // addSortFilter("asc", "SoSao", "Sao tăng dần");
+  // addSortFilter("des", "SoSao", "Sao giảm dần");
   addSortFilter("asc", "SoDanhGia", "Đánh giá tăng dần");
   addSortFilter("des", "SoDanhGia", "Đánh giá giảm dần");
   addSortFilter("asc", "TenSP", "Tên A-Z");
@@ -825,8 +818,6 @@ function sortToString(sortBy) {
   switch (sortBy) {
     case "DonGia":
       return "Giá ";
-    case "SoSao":
-      return "Sao ";
     case "SoDanhGia":
       return "Đánh giá ";
     case "TenSP":
