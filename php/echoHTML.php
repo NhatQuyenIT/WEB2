@@ -137,7 +137,7 @@ function addHome()
     <div class="choosedFilter flexContain"></div> <!-- Những bộ lọc đã chọn -->
     <hr>
 
-    <!-- Mặc định mới vào trang sẽ ẩn đi, nế có filter thì mới hiện lên -->
+    <!-- Mặc định mới vào trang sẽ ẩn đi, nếu có filter thì mới hiện lên -->
     <div class="contain-products" style="display:none">
     <div class="filterName">
         <div id="divSoLuongSanPham"></div>

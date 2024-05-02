@@ -62,16 +62,16 @@ CREATE TABLE `danhgia` (
 --
 
 INSERT INTO `danhgia` (`MaSP`, `MaND`, `SoSao`, `BinhLuan`, `NgayLap`) VALUES
-(4, '2', 4, 'Hoàng trần đẹp trai', '2019-05-16 19:28:13'),
-(4, '2', 1, 'Chưa tốt! cần cải thiện nhiều', '2019-05-16 19:29:30'),
-(2, '2', 4, 'Giảm giá 500k , quá gắt <3', '2019-05-16 19:31:48'),
-(46, '2', 4, 'Đỏ may mắn <3', '2019-05-16 19:32:58'),
-(44, '4', 5, 'wow, giá rẻ cấu hình ngon đây rồi <3', '2019-05-16 19:38:03'),
-(4, '4', 4, 'đẹp', '2019-05-16 19:47:56'),
-(2, '4', 3, 'aaa sơn cmn tùng <3', '2019-05-16 19:48:46'),
-(44, '4', 3, 'Ram có 1GB tiếc quá', '2019-05-16 19:49:20'),
-(46, '4', 2, 'Pin khá tệ ', '2019-05-16 19:49:44'),
-(15, '4', 4, 'mua vài chục cái về cho con cháu chọi nhau chơi :v', '2019-05-16 19:52:14');
+(8, '7', 5, 'Tai nghe này âm thanh cực kỳ sống động và bass mạnh mẽ!', '2024-02-15 08:45:00'),
+(8, '12', 2, 'Chất lượng âm thanh tạm ổn, nhưng kiểu dáng hơi cồng kềnh.', '2023-09-28 14:20:00'),
+(8, '5', 4, 'Giá cả hợp lý với chất lượng, rất đáng đồng tiền!', '2024-04-10 10:30:00'),
+(8, '18', 1, 'Sai lầm khi mua sản phẩm này, âm thanh không đạt mong đợi.', '2023-11-05 17:15:00'),
+(8, '9', 5, 'Không gì tuyệt vời hơn khi nghe nhạc với tai nghe này!', '2024-01-20 21:05:00'),
+(8, '14', 4, 'Rất thoải mái khi đeo, không gây đau tai sau thời gian dài sử dụng.', '2023-12-30 12:40:00'),
+(8, '22', 3, 'Thiết kế không quá ấn tượng nhưng âm thanh khá tốt.', '2024-03-18 16:55:00'),
+(8, '11', 4, 'Đã mua lần thứ 2, vẫn không hối hận về chất lượng.', '2023-10-10 09:10:00'),
+(8, '17', 1, 'Sản phẩm này không đáng tiền với chất lượng hiện tại.', '2024-02-05 13:20:00'),
+(8, '8', 5, 'Tai nghe này là một sự lựa chọn hoàn hảo cho mọi hoạt động giải trí!', '2023-08-22 19:00:00');
 
 -- --------------------------------------------------------
 
@@ -96,7 +96,7 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaND`, `NgayLap`, `NguoiNhan`, `SDT`, `DiaChi`, `PhuongThucTT`, `TongTien`, `TrangThai`) VALUES
-(1, 2, '2019-08-20 13:20:56', 'Nguyen Danh', '0123456789', 'Hà Nội', 'Trực tiếp khi nhận h', 337740000, '1');
+(1, 2, '2024-05-01 15:19:56', 'Nguyen Thanh Danh', '0993246149', 'Hà Nội', 'Trực tiếp khi nhận hàng', 34990000, '1');
 
 -- --------------------------------------------------------
 
@@ -181,10 +181,10 @@ CREATE TABLE `nguoidung` (
 --
 
 INSERT INTO `nguoidung` (`MaND`, `Ho`, `Ten`, `GioiTinh`, `SDT`, `Email`, `DiaChi`, `TaiKhoan`, `MatKhau`, `MaQuyen`, `TrangThai`) VALUES
-(1, 'Tran', 'Hoang', '', '0123456789', 'th@gmail.com', '', 'Hoang016', 'e10adc3949ba59abbe56e057f20f883e', 1, 1),
-(2, 'Nguyen', 'Danh', '', '0123456789', '', '', 'Abc', '202cb962ac59075b964b07152d234b70', 1, 1),
-(3, 'Trần', 'Hoàng', 'Nam', '', '', '', 'Admin', '202cb962ac59075b964b07152d234b70', 2, 1),
-(4, 'Nguyễn', 'Huệ', '', '01207764668', '', '', 'Hue', '202cb962ac59075b964b07152d234b70', 1, 1);
+(1, 'Nguyen', 'Thanh Danh', 'Nam', '0993246149', 'ntdanh@gmail.com', '325 Nguyễn Duy Dương P.4, Q.10', 'DavidMaxvn', 'e10adc3949ba59abbe56e057f20f883e', 1, 1),
+(2, 'Nguyễn', 'Ngọc Huyền', 'Nữ', '0123456789', '3121411090@sv.sgu.edu.vn', '273 An Dương Vương P.3, Q.5', 'HuyenNguyen', '202cb962ac59075b964b07152d234b70', 1, 1),
+(3, 'Lê Song', 'Nhật Quyền', 'Nam', '0362631410', 'lesongnhatquyen@gmail.com', '261 Nguyễn Tiểu La P.5, Q.11', 'Admin', '202cb962ac59075b964b07152d234b70', 2, 1),
+(4, 'Lương Thị', 'Thùy Quyên', 'Nữ', '01207764668', '3122411172@sv.sgu.edu.vn', '28 Nguyễn Thông, Q.3', 'thuyquyen', '202cb962ac59075b964b07152d234b70', 1, 1);
 
 -- --------------------------------------------------------
 

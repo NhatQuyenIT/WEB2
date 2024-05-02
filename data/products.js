@@ -1,10 +1,10 @@
 var list_products = [{
-    "name": "SamSung Galaxy J4+",
+    "name": "Tai nghe Bluetooth True Wireless Samsung Galaxy Buds FE R400N",
     "company": "Samsung",
-    "img": "img/products/samsung-galaxy-j4-plus-pink-400x400.jpg",
-    "price": 3490000,
-    "star": 3,
-    "rateCount": 26,
+    "img": "https://cdn.tgdd.vn/Products/Images/54/316448/samsung-galaxy-buds-fe-r400n-trang-1.jpg",
+    "price": 1390000,
+    "star": 4,
+    "rateCount": 14,
     "promo": {
         "name": "tragop",
         "value": "0"
