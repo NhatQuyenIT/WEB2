@@ -140,7 +140,7 @@ class KhuyenMaiBUS extends DB_business
 // Lớp chi tiết hóa đơn , có 2 khóa chính
 class ChiTietHoaDonBUS extends DB_business
 {
-    protected $key2;
+    protected $_key2;
 
     function __construct()
     {
