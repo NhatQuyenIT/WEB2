@@ -25,18 +25,19 @@ function getAlllBill(callback) {
   // Vẽ bảng
   function refreshTableThongKe() {
     getAlllBill((data) => {
-      addTableDonHang(data);
+      addTableThongKe(data);
       TATCA_DONHANG = data;
       console.log(data);
     });
   }
   function addTableThongKe(data) {
     var tc = document
-      .getElementsByClassName("donhang")[0]
+      .getElementsByClassName("donhang")[1]
       .getElementsByClassName("table-content2")[0];
     var s = `<table class="table-outline hideImg">`;
 
     TONGTIEN = 0;
+    var khachhang = [];
     for (var i = 0; i < data.length; i++) {
       var d = data[i];
 
@@ -52,55 +53,20 @@ function getAlllBill(callback) {
       }
 
       // Nút bấm Hành động
-      let action =
-        d.TrangThai == "-1" // Đã hủy
-          ? "_"
-          : d.TrangThai == "1" // Chờ duyệt
-            ? `<div class="tooltip">
-              <i class="fa fa-check" onclick="capNhatDonHang('${d.MaHD}', '2')"></i>
-              <span class="tooltiptext">Duyệt</span>
-          </div>
-          <div class="tooltip">
-              <i class="fa fa-remove" onclick="capNhatDonHang('${d.MaHD}', '-1')"></i>
-              <span class="tooltiptext">Hủy</span>
-          </div>`
-            : d.TrangThai == "2" // Đã duyệt
-              ? `<div class="tooltip">
-                <i class="fa fa-check" onclick="capNhatDonHang('${d.MaHD}', '3')"></i>
-                <span class="tooltiptext">Giao hàng</span>
-            </div>
-            <div class="tooltip">
-                <i class="fa fa-remove" onclick="capNhatDonHang('${d.MaHD}', '-1')"></i>
-                <span class="tooltiptext">Hủy</span>
-            </div>`
-              : d.TrangThai == "3" // Đang giao
-                ? `<div class="tooltip">
-              <i class="fa fa-check" onclick="capNhatDonHang('${d.MaHD}', '4')"></i>
-              <span class="tooltiptext">Giao xong</span>
-          </div>
-          <div class="tooltip">
-              <i class="fa fa-remove" onclick="capNhatDonHang('${d.MaHD}', '-1')"></i>
-              <span class="tooltiptext">Hủy</span>
-          </div>`
-                : d.TrangThai == "4" // Giao xong
-                  ? `_`
-                  : "";
-
+      
       // Người dùng
       let nguoiDung =
         `${d.ND.TaiKhoan}<br/>` +
         `(${d.ND.Ho} ${d.ND.Ten})<br/>` +
         `Mã: ${d.MaND}`;
-
+      if(getTenTrangThaiDonHang(d.TrangThai)=="Đã giao")
       s += `<tr>
-          <td style="width: 5%">${i + 1}</td>
           <td style="width: 7%">${d.MaHD}</td>
           <td style="width: 13%">${nguoiDung}</td>
           <td style="width: 20%; text-align:right;">${dssp}</td>
           <td style="width: 15%">${numToString(Number(d.TongTien))}</td>
           <td style="width: 10%">${date}</td>
           <td style="width: 10%">${getTenTrangThaiDonHang(d.TrangThai)}</td>
-          <td style="width: 10%">${action}</td>
       </tr>`;
       TONGTIEN += Number(d.tongtien);
     }
