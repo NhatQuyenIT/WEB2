@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="css/admin/style.css">
     <link rel="stylesheet" href="css/admin/progress.css">
     <link rel="stylesheet" href="css/admin/tuchoitruycap.css">
-    <link rel="stylesheet" href="css/admin/thongke.css">
+    <link rel="stylesheet" href="css/admin/Thongke.css">
 
     <!-- <script src="data/products.js"></script>
     <script src="js/classes.js"></script> -->
@@ -257,7 +257,6 @@
                 <div class="timTheoNgay">
                     Từ ngày: <input type="date" id="fromDate">
                     Đến ngày: <input type="date" id="toDate">
-
                     <button onclick="locDonHangTheoKhoangNgay()"><i class="fa fa-search"></i> Tìm</button>
                 </div>
 
@@ -277,13 +276,13 @@
             <table class="table-header">
                 <tr>
                     <!-- Theo độ rộng của table content -->
-                    <th title="Sắp xếp" onclick="sortKhachHangTable('stt')" style="width: auto;">Stt <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp" onclick="sortKhachHangTable('hoten')" style="width: auto">Họ tên <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp" onclick="sortKhachHangTable('email')" style="width: auto;">Email <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp" onclick="sortKhachHangTable('taikhoan')" style="width: auto;">Tài khoản <i class="fa fa-sort"></i>
+                    <th title="Sắp xếp" onclick="sortKhachHangTable('stt')" style="width: 10px;">Stt <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" onclick="sortKhachHangTable('hoten')" style="width: 15px;">Họ tên <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" onclick="sortKhachHangTable('email')" style="width: 10px;">Email <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" onclick="sortKhachHangTable('taikhoan')" style="width: 15px;">Tài khoản <i class="fa fa-sort"></i>
                     </th>
 
-                    <th style="width: auto">Hành động</th>
+                    <th style="width: 15px;">Hành động</th>
                 </tr>
             </table>
 
@@ -309,7 +308,7 @@
                         <p>
                             <i class='bx bx-gift'></i>
                         </p>
-                        <h3 id="sosanpham"></h3>
+                        <h3 id="sosanpham">173.650</h3>
                         <p>Sản phẩm</p>
                     </div>
                 </div>
@@ -318,7 +317,7 @@
                         <p>
                             <i class='bx bx-task'></i>
                         </p>
-                        <h3 id="sodonhang"></h3>
+                        <h3 id="sodonhang">10</h3>
                         <p>Hóa đơn</p>
                     </div>
                 </div>
@@ -327,7 +326,7 @@
                         <p>
                             <i class='bx bxs-user'></i>
                         </p>
-                        <h3 id="souser"></h3>
+                        <h3 id="souser">6</h3>
                         <p>Khách hàng</p>
                     </div>
                 </div>
@@ -336,7 +335,7 @@
                         <p>
                             <i class='bx bx-money'></i>
                         </p>
-                        <h3 id="tongchi"></h3>
+                        <h3 id="tongchi">150.000.000.000 vnđ</h3>
                         <p>Doanh thu</p>
                     </div>
                 </div>
@@ -352,31 +351,25 @@
                         </div>
                         <div class="card-content">
                             <div class="timTheoNgay" id="datetextfilter">
-                                Từ ngày: <input type="date" id="fromDate">
-                                Đến ngày: <input type="date" id="toDate">
+                                Từ ngày: <input type="date" id="fromDate1">
+                                Đến ngày: <input type="date" id="toDate1">
 
-                                <button onclick="locDonHangTheoKhoangNgay()"><i class="fa fa-search"></i> Tìm</button>
+                                <button onclick="locThongKeTheoKhoangNgay()"><i class="fa fa-search"></i> Tìm</button>
                             </div>
-
-                            <select name="kieuTimDonHang">
-                                <option value="khachhang">Tìm theo tên khách hàng</option>
-                            </select>
                             <!-- <input type="text" placeholder="Tìm kiếm..." onkeyup="timKiemDonHang(this)"> -->
                         </div>
                         <div class="donhang">
                             <table id="table-header">
                                 <thead>
                                     <tr>
-                                        <th title="Sắp xếp" onclick="sortDonHangTable('stt')">Stt <i class="fa fa-sort"></i></th>
-                                        <th title="Sắp xếp" onclick="sortDonHangTable('khach')">Khách hàng<i class="fa fa-sort"></i></th>
-                                        <th title="Sắp xếp" onclick="sortDonHangTable('sanpham')">Sản phẩm <i class="fa fa-sort"></i></th>
-                                        <th title="Sắp xếp" onclick="sortDonHangTable('tongtien')">Tổng tiền <i class="fa fa-sort"></i></th>
-                                        <th title="Sắp xếp" onclick="sortDonHangTable('ngaygio')">Ngày giờ <i class="fa fa-sort"></i></th>
+                                        <th title="Sắp xếp" style="width: 8%" onclick="sortThongKeTable('stt')">Stt <i class="fa fa-sort"></i></th>
+                                        <th title="Sắp xếp" style="width: 15%" onclick="sortThongKeTable('khach')">Khách hàng<i class="fa fa-sort"></i></th>
+                                        <th title="Sắp xếp" style="width: 20%" onclick="sortThongKeTable('sanpham')">Sản phẩm <i class="fa fa-sort"></i></th>
+                                        <th title="Sắp xếp" style="width: 15%" onclick="sortThongKeTable('tongtien')">Tổng tiền <i class="fa fa-sort"></i></th>
+                                        <th title="Sắp xếp" style="width: 10%" onclick="sortThongKeTable('ngaygio')">Ngày giờ <i class="fa fa-sort"></i></th>
+                                        <th title="Sắp xếp" style="width: 10%" onclick="sortThongKeTable('trangthai')">Trạng thái <i class="fa fa-sort"></i></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-
-                                </tbody>
                             </table>
                             <div class="table-content2">
                             </div>
@@ -401,7 +394,56 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    <tr>
+                                        <td>Apple</td>
+                                        <td>100.000</td>
+                                        <td>10.000.000.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SamSung</td>
+                                        <td>50.000</td>
+                                        <td>5.000.000.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sony</td>
+                                        <td>2.000</td>
+                                        <td>20.000.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Awei</td>
+                                        <td>1.000</td>
+                                        <td>10.000.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Havit</td>
+                                        <td>50</td>
+                                        <td>500.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monster</td>
+                                        <td>100</td>
+                                        <td>1.000.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vivo</td>
+                                        <td>2.500</td>
+                                        <td>25.000.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Oppo</td>
+                                        <td>5.000</td>
+                                        <td>50.000.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ava+</td>
+                                        <td>3.000</td>
+                                        <td>30.000.000 vnđ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Xiaomi</td>
+                                        <td>10.000</td>
+                                        <td>100.000.000 vnđ</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -412,7 +454,7 @@
         <!--END TNONg KE-->
 
     </div>
-    </div> <!-- // main -->
+    </div>
 
 
     <footer>

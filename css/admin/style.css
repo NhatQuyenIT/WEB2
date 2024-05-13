@@ -190,12 +190,11 @@ header h2 {
     width: 100%;
 }
 
-.table-content tr:nth-of-type(even) {
+.table-content tr:nth-of-type(even),
+.table-content tr:nth-of-type(odd) {
     background-color: silver;
 }
-.table-content tr:nth-of-type(odd) {
-    background-color: gold;
-}
+
 .table-content td {
     position: relative;
     color: #000000;

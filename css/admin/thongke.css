@@ -392,11 +392,9 @@ table#table-header th {
     border: 1px solid #000000;
 }
 
-.table-content2 tr:nth-of-type(even) {
-    background-color: silver;
-}
-.table-content2 tr:nth-of-type(odd) {
-    background-color: gold;
+.table-content2 tr:nth-child(even),
+.table-content2 tr:nth-child(odd) {
+    background-color: #fff !important;
 }
 .table-content2 td {
     position: relative;

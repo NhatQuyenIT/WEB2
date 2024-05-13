@@ -185,7 +185,7 @@ function addChiTietSanPham()
                 <div class="policy">
                     <div>
                         <i class="fa fa-archive"></i>
-                        <p>Trong hộp có: Sạc, Tai nghe, Sách hướng dẫn, Cây lấy sim, Ốp lưng </p>
+                        <p>Trong hộp có: Sạc, Tai nghe, Sách hướng dẫn </p>
                     </div>
                     <div>
                         <i class="fa fa-star"></i>

@@ -48,7 +48,7 @@ function getAlllBill(callback) {
       var dssp = ``;
       for (var ct of d.CTDH) {
         dssp += `<a target="blank" href="chitietsanpham.php?${ct.SP.MaSP}">
-        <p>${ct.SP.TenSP} [<span style="color:yellow">${ct.SoLuong}</span>]</p>
+        <p>${ct.SP.TenSP} [<span style="color: #000">${ct.SoLuong}</span>]</p>
       </a>`;
       }
 
@@ -61,9 +61,9 @@ function getAlllBill(callback) {
         `Mã: ${d.MaND}`;
       if(getTenTrangThaiDonHang(d.TrangThai)=="Đã giao")
       s += `<tr>
-          <td style="width: 7%">${d.MaHD}</td>
-          <td style="width: 13%">${nguoiDung}</td>
-          <td style="width: 20%; text-align:right;">${dssp}</td>
+          <td style="width: 8%">${d.MaHD}</td>
+          <td style="width: 15%">${nguoiDung}</td>
+          <td style="width: 20%; text-align: left;">${dssp}</td>
           <td style="width: 15%">${numToString(Number(d.TongTien))}</td>
           <td style="width: 10%">${date}</td>
           <td style="width: 10%">${getTenTrangThaiDonHang(d.TrangThai)}</td>
@@ -156,27 +156,29 @@ function getAlllBill(callback) {
   }
 
   function locThongKeTheoKhoangNgay() {
-    var from = document.getElementById("fromDate").valueAsDate;
-    var to = document.getElementById("toDate").valueAsDate;
+    var fromDate = new Date(document.getElementById("fromDate1").value);
+    var toDate = new Date(document.getElementById("toDate1").value);
 
-    var listTr_table = document
-      .getElementsByClassName("donhang")[0]
-      .getElementsByClassName("table-content2")[0]
-      .getElementsByTagName("tr");
-    for (var tr of listTr_table) {
-      var td = tr.getElementsByTagName("td")[5].innerHTML;
-      var d = new Date(td);
+    var rows = document.querySelectorAll(".table-content2 table tbody tr");
 
-      if (d >= from && d <= to) {
-        tr.style.display = "";
-      } else {
-        tr.style.display = "none";
-      }
-    }
-  }
+    rows.forEach(function(row) {
+        var ngayGioText = row.querySelector("td:nth-child(5)").textContent;
+        var ngayGio = new Date(ngayGioText);
+
+        // Đặt giờ, phút, giây của ngày tháng được chọn về 0 để so sánh ngày bắt đầu của fromDate và ngày kết thúc của toDate.
+        fromDate.setHours(0, 0, 0, 0);
+        toDate.setHours(23, 59, 59, 999);
+
+        if (ngayGio >= fromDate && ngayGio <= toDate) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
 
   function timKiemThongKe(inp) {
-    var kieuTim = document.getElementsByName("kieuTimDonHang")[0].value;
+    var kieuTim = document.getElementsByName("kieuTimThongKe")[0].value;
     var text = inp.value;
 
     // Lọc
@@ -210,7 +212,7 @@ function getAlllBill(callback) {
       .getElementsByClassName("table-content2")[0];
     var tr = list.getElementsByTagName("tr");
 
-    quickSort(tr, 0, tr.length - 1, loai, getValueOfTypeInTable_DonHang);
+    quickSort(tr, 0, tr.length - 1, loai, getValueOfTypeInTable_ThongKe);
     decrease = !decrease;
   }
 

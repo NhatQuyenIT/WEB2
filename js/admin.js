@@ -1030,26 +1030,28 @@ function capNhatAnhSanPham(files, id, anh) {
       },
     });
   }
-
+  
   function locDonHangTheoKhoangNgay() {
-    var from = document.getElementById("fromDate").valueAsDate;
-    var to = document.getElementById("toDate").valueAsDate;
+    var fromDate = new Date(document.getElementById("fromDate").value);
+    var toDate = new Date(document.getElementById("toDate").value);
 
-    var listTr_table = document
-      .getElementsByClassName("donhang")[0]
-      .getElementsByClassName("table-content")[0]
-      .getElementsByTagName("tr");
-    for (var tr of listTr_table) {
-      var td = tr.getElementsByTagName("td")[5].innerHTML;
-      var d = new Date(td);
+    var rows = document.querySelectorAll(".donhang .table-content table tbody tr");
 
-      if (d >= from && d <= to) {
-        tr.style.display = "";
-      } else {
-        tr.style.display = "none";
-      }
-    }
-  }
+    rows.forEach(function(row) {
+        var ngayGioText = row.querySelector("td:nth-child(6)").textContent;
+        var ngayGio = new Date(ngayGioText);
+
+        // Đặt giờ, phút, giây của ngày tháng được chọn về 0 để so sánh ngày bắt đầu của fromDate và ngày kết thúc của toDate.
+        fromDate.setHours(0, 0, 0, 0);
+        toDate.setHours(23, 59, 59, 999);
+
+        if (ngayGio >= fromDate && ngayGio <= toDate) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
 
   function timKiemDonHang(inp) {
     var kieuTim = document.getElementsByName("kieuTimDonHang")[0].value;
@@ -1167,11 +1169,11 @@ function capNhatAnhSanPham(files, id, anh) {
       var u = data[i];
 
       s += `<tr>
-            <td >${i + 1}</td>
-            <td >${u.Ho} ${u.Ten}</td>
-            <td >${u.Email}</td>
-            <td >${u.TaiKhoan}</td>           
-            <td >
+            <td style="width: 10px;">${i + 1}</td>
+            <td style="width: 15px;">${u.Ho} ${u.Ten}</td>
+            <td style="width: 10px !important; padding: 0 !important; margin: 0 !important;">${u.Email}</td>
+            <td style="width: 15px;">${u.TaiKhoan}</td>           
+            <td style="width: 15px;">
                 <div class="tooltip">
                     <label class="switch">
                         <input type="checkbox" ${u.TrangThai == 1 ? "checked" : ""
