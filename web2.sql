@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 02, 2024 lúc 07:30 PM
+-- Thời gian đã tạo: Th5 13, 2024 lúc 04:54 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -40,7 +40,59 @@ CREATE TABLE `chitiethoadon` (
 
 INSERT INTO `chitiethoadon` (`MaHD`, `MaSP`, `SoLuong`, `DonGia`) VALUES
 (1, 46, 1, 24990000),
-(1, 4, 10, 31990000);
+(1, 4, 10, 31990000),
+(2, 46, 1, 350000),
+(2, 1, 2, 1500000),
+(2, 7, 2, 1100000),
+(2, 8, 1, 100000),
+(2, 18, 1, 200000),
+(2, 6, 1, 400000),
+(3, 3, 1, 230000),
+(3, 10, 1, 1900000),
+(3, 13, 1, 90000),
+(3, 47, 1, 550000),
+(3, 48, 1, 200000),
+(4, 15, 2, 380000),
+(4, 1, 1, 1500000),
+(4, 7, 1, 1100000),
+(4, 8, 1, 100000),
+(4, 9, 2, 4400000),
+(4, 12, 1, 100000),
+(4, 6, 1, 400000),
+(4, 18, 1, 200000),
+(4, 14, 1, 90000),
+(4, 23, 1, 250000),
+(5, 9, 3, 4400000),
+(5, 5, 2, 3450000),
+(6, 3, 1, 230000),
+(6, 12, 1, 100000),
+(6, 10, 1, 1900000),
+(6, 6, 1, 400000),
+(6, 48, 1, 200000),
+(6, 2, 1, 640000),
+(6, 7, 1, 1100000),
+(6, 17, 1, 250000),
+(6, 15, 1, 380000),
+(6, 14, 1, 90000),
+(7, 11, 1, 6100000),
+(7, 47, 1, 550000),
+(7, 17, 1, 250000),
+(7, 5, 1, 3450000),
+(7, 10, 1, 1900000),
+(8, 19, 1, 2200000),
+(8, 18, 2, 200000),
+(8, 16, 1, 250000),
+(8, 15, 2, 380000),
+(8, 46, 1, 350000),
+(8, 2, 1, 640000),
+(8, 23, 1, 250000),
+(8, 1, 1, 1500000),
+(8, 8, 2, 100000),
+(9, 13, 2, 90000),
+(9, 14, 2, 90000),
+(9, 6, 1, 400000),
+(9, 3, 1, 230000),
+(9, 12, 2, 100000);
 
 -- --------------------------------------------------------
 
@@ -50,9 +102,9 @@ INSERT INTO `chitiethoadon` (`MaHD`, `MaSP`, `SoLuong`, `DonGia`) VALUES
 
 CREATE TABLE `danhgia` (
   `MaSP` int(11) NOT NULL,
-  `MaND` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `MaND` varchar(10) NOT NULL,
   `SoSao` int(11) NOT NULL,
-  `BinhLuan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `BinhLuan` varchar(255) NOT NULL,
   `NgayLap` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -95,7 +147,15 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaND`, `NgayLap`, `NguoiNhan`, `SDT`, `DiaChi`, `PhuongThucTT`, `TongTien`, `TrangThai`) VALUES
-(1, 2, '2024-05-01 15:19:56', 'Nguyễn Ngọc Huyền', '0993246149', 'Hà Nội', 'Trực tiếp khi nhận hàng', 34990000, '4');
+(1, 2, '2024-05-01 15:19:56', 'Nguyễn Ngọc Huyền', '0993246149', 'Hà Nội', 'Trực tiếp khi nhận h', 34990000, '4'),
+(2, 5, '2024-05-13 14:15:08', 'Lê Song Nhật Quyền', '0362631410', '23/2 Nhật Tảo P.4 Q.10', 'Trực tiếp khi nhận h', 6250000, '4'),
+(3, 5, '2024-05-13 14:17:06', 'Lê Song Nhật Quyền', '0362631410', '23/2 Nhật Tảo P.4 Q.10', 'Trực tiếp khi nhận h', 2970000, '-1'),
+(4, 6, '2024-05-13 14:22:15', 'Phan Thị Kim Loan', '0915107907', '273 An Dương Vương P.3 Q.5', 'Qua thẻ ngân hàng', 13300000, '4'),
+(5, 6, '2024-05-13 14:34:35', 'Phan Thị Kim Loan', '0915107907', '273 An Dương Vương P.3 Q.5', 'Qua thẻ ngân hàng', 20100000, '-1'),
+(6, 7, '2024-05-13 14:38:24', 'Vũ Thị Thu Hà', '0943216789', '456 Nguyễn Duy Trinh, Bình Trưng Tây, Q.2', 'Trực tiếp khi nhận h', 5290000, '4'),
+(7, 8, '2024-05-13 14:42:42', 'Đặng Hồng Phúc', '0965437890', '123 Lê Văn Quới, Bình Khánh, Q.7', 'Qua thẻ ngân hàng', 12250000, '4'),
+(8, 9, '2024-05-13 14:46:44', 'Hoàng Minh Tuấn', '0956781234', '484 Nguyễn Văn Linh, Tân Phú, Q.7', 'Trực tiếp khi nhận h', 6550000, '4'),
+(9, 10, '2024-05-13 14:50:14', 'Lê Minh Đức', '0978123456', '376 Huỳnh Tấn Phát, Bình Thuận, Q.7', 'Qua thẻ ngân hàng', 1190000, '-1');
 
 -- --------------------------------------------------------
 
@@ -131,9 +191,9 @@ INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `LoaiKM`, `GiaTriKM`, `NgayBD`, `NgayK
 
 CREATE TABLE `loaisanpham` (
   `MaLSP` int(11) NOT NULL,
-  `TenLSP` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
-  `HinhAnh` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `Mota` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+  `TenLSP` varchar(70) NOT NULL,
+  `HinhAnh` varchar(200) NOT NULL,
+  `Mota` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -160,14 +220,14 @@ INSERT INTO `loaisanpham` (`MaLSP`, `TenLSP`, `HinhAnh`, `Mota`) VALUES
 
 CREATE TABLE `nguoidung` (
   `MaND` int(11) NOT NULL,
-  `Ho` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `Ten` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `GioiTinh` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `SDT` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `Email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `DiaChi` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `TaiKhoan` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `MatKhau` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Ho` varchar(20) NOT NULL,
+  `Ten` varchar(20) NOT NULL,
+  `GioiTinh` varchar(10) NOT NULL,
+  `SDT` varchar(20) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `DiaChi` varchar(200) NOT NULL,
+  `TaiKhoan` varchar(100) NOT NULL,
+  `MatKhau` varchar(100) NOT NULL,
   `MaQuyen` int(11) NOT NULL,
   `TrangThai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -180,7 +240,13 @@ INSERT INTO `nguoidung` (`MaND`, `Ho`, `Ten`, `GioiTinh`, `SDT`, `Email`, `DiaCh
 (1, 'Nguyen', 'Thanh Danh', 'Nam', '0993246149', 'ntdanh@gmail.com', '325 Nguyễn Duy Dương P.4, Q.10', 'DavidMaxvn', 'e10adc3949ba59abbe56e057f20f883e', 1, 1),
 (2, 'Nguyễn', 'Ngọc Huyền', 'Nữ', '0123456789', '3121411090@sv.sgu.edu.vn', '273 An Dương Vương P.3, Q.5', 'HuyenNguyen', '202cb962ac59075b964b07152d234b70', 1, 1),
 (3, 'Lê Song', 'Nhật Quyền', 'Nam', '0362631410', 'lesongnhatquyen@gmail.com', '261 Nguyễn Tiểu La P.5, Q.11', 'Admin', '202cb962ac59075b964b07152d234b70', 2, 1),
-(4, 'Lương Thị', 'Thùy Quyên', 'Nữ', '01207764668', '3122411172@sv.sgu.edu.vn', '28 Nguyễn Thông, Q.3', 'thuyquyen', '202cb962ac59075b964b07152d234b70', 1, 1);
+(4, 'Lương Thị', 'Thùy Quyên', 'Nữ', '01207764668', '3122411172@sv.sgu.edu.vn', '28 Nguyễn Thông, Q.3', 'thuyquyen', '202cb962ac59075b964b07152d234b70', 1, 1),
+(5, 'Lê Song', 'Nhật Quyền', '', '0362631410', 'lesongnhatquyen@gmail.com', '23/2 Nhật Tảo P.4 Q.10', 'NhatQuyenIT', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1),
+(6, 'Phan Thị', 'Kim Loan', '', '0915107907', 'kimloanpt@gmail.com', '273 An Dương Vương P.3 Q.5', 'LoanPhanpt', 'f43df3f122fc4eb0f119f46d11b0c7d0', 1, 1),
+(7, 'Vũ Thị', 'Thu Hà', '', '0943216789', 'thuthuha@yahoo.com', '456 Nguyễn Duy Trinh, Bình Trưng Tây, Q.2', 'thuthuha444', '003c875f99b07229cff54d355c925a1f', 1, 1),
+(8, 'Đặng', 'Hồng Phúc', '', '0965437890', 'hongphuc@outlook.com.vn', '123 Lê Văn Quới, Bình Khánh, Q.7', 'hongphuc333', '17eb29cb2cdb4e5e30f125cc7ff0d57e', 1, 1),
+(9, 'Hoàng', 'Minh Tuấn', '', '0956781234', 'minhtuan@hotmail.com', '484 Nguyễn Văn Linh, Tân Phú, Q.7', 'minhtuan222', '93753dd37ea268111ca8d061554cdd0e', 1, 1),
+(10, 'Lê', 'Minh Đức', '', '0978123456', 'minhduc@outlook.com', '376 Huỳnh Tấn Phát, Bình Thuận, Q.7', 'minhduc789', 'f610f781e3d8e3863df3986d0b373b0e', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -190,8 +256,8 @@ INSERT INTO `nguoidung` (`MaND`, `Ho`, `Ten`, `GioiTinh`, `SDT`, `Email`, `DiaCh
 
 CREATE TABLE `phanquyen` (
   `MaQuyen` int(11) NOT NULL,
-  `TenQuyen` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `ChiTietQuyen` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `TenQuyen` varchar(20) NOT NULL,
+  `ChiTietQuyen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -324,7 +390,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `khuyenmai`
@@ -342,7 +408,7 @@ ALTER TABLE `loaisanpham`
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `MaND` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `MaND` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `phanquyen`
