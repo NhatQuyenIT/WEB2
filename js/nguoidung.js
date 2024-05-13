@@ -8,7 +8,7 @@ window.onload = function () {
   // thêm tags (từ khóa) vào khung tìm kiếm
   var tags = ["Samsung", "Apple", "Xiaomi", "Havit", "Oppo"];
   for (var t of tags) addTags(t, "index.php?search=" + t);
-  
+
   getCurrentUser(
     (data) => {
       if (data) {
@@ -19,8 +19,12 @@ window.onload = function () {
             request: "getCurrentUser",
           },
           success: function (data) {
-            $(".listDonHang").html(tableDonHang_Html(JSON.parse(data)));  
-          },          
+            var donHangData = JSON.parse(data);
+            $(".listDonHang").html(tableDonHang_Html(donHangData));
+
+            // Tính tổng tiền và số lượng sản phẩm từ dữ liệu đơn hàng
+            tongTienTatCaDonHang = tinhTongTien(donHangData);
+          },
         });
         $.ajax({
           type: "POST",
@@ -32,9 +36,10 @@ window.onload = function () {
             console.log("Raw data from server:", data); // Check the raw data received from the server
             var userData = JSON.parse(data);
             console.log("Parsed user data:", userData); // Check the parsed user data
-            $(".infoUser").html(addInfoUser(userData)); // Cập nhật UI thông tin người dùng
-            
-          },          
+
+            // Cập nhật UI thông tin người dùng
+            $(".infoUser").html(addInfoUser(userData));
+          },
         });
       } else {
         var warning = `<h2 style="color: red; font-weight:bold; text-align:center; font-size: 2em; padding: 50px;">
@@ -49,6 +54,20 @@ window.onload = function () {
   );
 };
 
+function tinhTongTien(donHangData) {
+  let tongTien = 0;
+  for (let donHang of donHangData) {
+    if (getTenTrangThaiDonHang(donHang.TrangThai) === "Đã giao") {
+      // Chuyển đổi số thành chuỗi có định dạng tiền tệ và thêm ký tự '₫'
+      let giaTriChuoi = donHang.TongTien.toLocaleString('vi-VN') + '₫';
+
+      // Chuyển đổi chuỗi thành số để tính tổng tiền
+      tongTien += parseFloat(giaTriChuoi.replace('₫', '').replace(/,/g, ''));
+    }
+  }
+  // Chuyển đổi tổng tiền thành chuỗi có định dạng tiền tệ và trả về
+  return tongTien.toLocaleString('vi-VN');
+}
 
 function xemChiTiet(mahd) {
   $.ajax({
@@ -150,7 +169,7 @@ function tableDonHang_Html(data) {
 function addInfoUser(user) {
   if (!user) return;
   $(".infoUser").html(
-     `
+    `
   <hr>
   <table>
       <tr>
@@ -225,16 +244,15 @@ function addInfoUser(user) {
           <td> <input type="text" value="${numToString(tongTienTatCaDonHang)}₫" size="50" maxlength="50" minlength="10" readonly> </td>
           <td></td>
       </tr>
-      <tr>
-          <td>Số lượng sản phẩm đã mua: </td>
-          <td> <input type="text" value="${tongSanPhamTatCaDonHang}" size="50" maxlength="50" minlength="10" readonly> </td>
-          <td></td>
-      </tr>
   </table>
   `
   );
 }
-
+    // <tr>
+    //   <td>Số lượng đơn hàng đã giao: </td>
+    //   <td> <input type="text" value="${tongSanPhamTatCaDonHang}" size="50" maxlength="50" minlength="10" readonly> </td>
+    //   <td></td>
+    // </tr>
 function openChangePass() {
   var khungChangePass = document.getElementById("khungDoiMatKhau");
   var actived = khungChangePass.classList.contains("active");
@@ -341,64 +359,64 @@ function changeInfo(iTag, info) {
       // Lưu thông tin người dùng vào localStorage
       localStorage.setItem('currentUser', JSON.stringify(user));
     }
-    
+
     // Khai báo và khởi tạo biến users là một mảng rỗng
-var users = [];
+    var users = [];
 
-// Hàm cập nhật thông tin người dùng trong danh sách người dùng
-function updateListUser(oldUser, newUser) {
-  console.log("Updating user:", oldUser, "->", newUser);
-  console.log("Current list of users:", users);
+    // Hàm cập nhật thông tin người dùng trong danh sách người dùng
+    function updateListUser(oldUser, newUser) {
+      console.log("Updating user:", oldUser, "->", newUser);
+      console.log("Current list of users:", users);
 
-  if (!Array.isArray(users)) {
-    console.error("Error: users is not an array!");
-    return;
-  }
+      if (!Array.isArray(users)) {
+        console.error("Error: users is not an array!");
+        return;
+      }
 
-  var index = -1;
-  for (var i = 0; i < users.length; i++) {
-    if (users[i].username === oldUser.username) {
-      index = i;
-      break;
+      var index = -1;
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].username === oldUser.username) {
+          index = i;
+          break;
+        }
+      }
+
+      if (index !== -1) {
+        // Cập nhật thông tin người dùng tại vị trí index
+        users[index] = newUser;
+        console.log("User updated in the list:", oldUser, "->", newUser);
+      } else {
+        console.error("User not found in the list:", oldUser);
+        console.log("List of users:", users); // In ra danh sách users để debug
+      }
     }
-  }
 
-  if (index !== -1) {
-    // Cập nhật thông tin người dùng tại vị trí index
-    users[index] = newUser;
-    console.log("User updated in the list:", oldUser, "->", newUser);
-  } else {
-    console.error("User not found in the list:", oldUser);
-    console.log("List of users:", users); // In ra danh sách users để debug
-  }
-}
-    
     // cập nhật danh sách sản phẩm trong localstorage
     setCurrentUser(currentUser);
     updateListUser(temp, currentUser);
 
-// Định nghĩa hàm capNhat_ThongTin_CurrentUser để cập nhật thông tin người dùng trên header
-function capNhat_ThongTin_CurrentUser() {
-  // Thực hiện các thao tác cập nhật thông tin người dùng trên header
-  console.log("Cập nhật thông tin người dùng trên header");
-  // Ví dụ: Cập nhật tên người dùng trên header
-  var currentUser = getCurrentUser(); // Giả sử hàm getCurrentUser() trả về thông tin người dùng hiện tại
-  var tenNguoiDungElement = document.getElementById("TaiKhoan"); // ID của phần tử hiển thị tên người dùng trên header
-  if (tenNguoiDungElement) {
-    tenNguoiDungElement.innerText = currentUser.username; // Hiển thị tên người dùng trên header
-  }
-}
+    // Định nghĩa hàm capNhat_ThongTin_CurrentUser để cập nhật thông tin người dùng trên header
+    function capNhat_ThongTin_CurrentUser() {
+      // Thực hiện các thao tác cập nhật thông tin người dùng trên header
+      console.log("Cập nhật thông tin người dùng trên header");
+      // Ví dụ: Cập nhật tên người dùng trên header
+      var currentUser = getCurrentUser(); // Giả sử hàm getCurrentUser() trả về thông tin người dùng hiện tại
+      var tenNguoiDungElement = document.getElementById("TaiKhoan"); // ID của phần tử hiển thị tên người dùng trên header
+      if (tenNguoiDungElement) {
+        tenNguoiDungElement.innerText = currentUser.username; // Hiển thị tên người dùng trên header
+      }
+    }
 
-// Ví dụ hàm getCurrentUser để lấy thông tin người dùng hiện tại từ localStorage
-function getCurrentUser() {
-  // Giả sử thông tin người dùng đã được lưu trữ trong localStorage
-  var currentUserData = localStorage.getItem("currentUser");
-  if (currentUserData) {
-    return JSON.parse(currentUserData); // Chuyển đổi chuỗi JSON thành đối tượng JavaScript
-  } else {
-    return null;
-  }
-}
+    // Ví dụ hàm getCurrentUser để lấy thông tin người dùng hiện tại từ localStorage
+    function getCurrentUser() {
+      // Giả sử thông tin người dùng đã được lưu trữ trong localStorage
+      var currentUserData = localStorage.getItem("currentUser");
+      if (currentUserData) {
+        return JSON.parse(currentUserData); // Chuyển đổi chuỗi JSON thành đối tượng JavaScript
+      } else {
+        return null;
+      }
+    }
 
 
     // Cập nhật trên header
@@ -445,8 +463,8 @@ function addDonHang(dh) {
         <tr>
             <th colspan="6">
                 <h3 style="text-align:center;"> Đơn hàng ngày: ${new Date(
-                  dh.ngaymua
-                ).toLocaleString()}</h3>
+    dh.ngaymua
+  ).toLocaleString()}</h3>
             </th>
         </tr>
         <tr>
@@ -472,8 +490,8 @@ function addDonHang(dh) {
           <td>${i + 1}</td>
           <td class="noPadding imgHide">
               <a target="_blank" href="chitietsanpham.php?${p.name
-                .split(" ")
-                .join("-")}" title="Xem chi tiết">
+        .split(" ")
+        .join("-")}" title="Xem chi tiết">
                   ${p.name}
                   <img src="${p.img}">
               </a>

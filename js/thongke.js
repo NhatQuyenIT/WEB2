@@ -32,7 +32,7 @@ function getAlllBill(callback) {
   }
   function addTableThongKe(data) {
     var tc = document
-      .getElementsByClassName("donhang")[1]
+      .getElementsByClassName("donhang")[1] // sửa khúc này
       .getElementsByClassName("table-content2")[0];
     var s = `<table class="table-outline hideImg">`;
 
@@ -208,7 +208,7 @@ function getAlllBill(callback) {
   // Sắp xếp
   function sortThongKeTable(loai) {
     var list = document
-      .getElementsByClassName("donhang")[0]
+      .getElementsByClassName("donhang")[1]
       .getElementsByClassName("table-content2")[0];
     var tr = list.getElementsByTagName("tr");
 
