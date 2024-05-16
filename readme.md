@@ -10,7 +10,7 @@ Nâng cấp từ WEB1 và Sử dụng HTML, CSS, Bootstrap, jQuery, Ajax, PHP, M
 |  3  | 3122411172 | [Lương Thị Thùy Quyên](https://www.facebook.com/thuy.quyen.dangiu) | DCT122C3 |
 
 ## Demo
-[![Watch the video](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![Watch the video](https://img.youtube.com/vi/3fIa2wVb5ig/0.jpg)](https://youtu.be/3fIa2wVb5ig)
 
 *TRANG CHU 
 ![alt text](./img/Screenshots/Screenshot_16-5-2024_225045_localhost.jpeg)
@@ -26,20 +26,29 @@ Nâng cấp từ WEB1 và Sử dụng HTML, CSS, Bootstrap, jQuery, Ajax, PHP, M
 
 ## Tài khoản admin
 user: Admin
+
 pass: 123
 
 ## Database
 Database name: web2
+
 User: root,
+
 Pass: ""
 
 ## User mua hàng (6 tài khoản)
 Username 1: LoanPhanpt, pass: beyeu123
+
 Username 2: NhatQuyenIT, pass: 12345
+
 Username 3: thuthuha444, pass: Haha9876*
+
 Username 4: hongphuc333, pass: Phuc123#
+
 Username 5: minhtuan222, pass: Tuantuan22@
+
 Username 6: minhduc789, pass: Duc1234$
+
 Users khác: Tự đăng ký và đăng nhập !
 
 
