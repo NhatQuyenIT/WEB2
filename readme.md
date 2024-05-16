@@ -46,5 +46,5 @@ Users khác: Tự đăng ký và đăng nhập !
 # Lưu ý: 
 - Nếu có lỗi lấy dữ liệu, có thể do cài đặt kết nối database gặp bị sai, bạn vào BackEnd/ConnectionDB DB_driver.php chỉnh lại $host, $DbName, $user, $pass cho đúng với cài đặt phpmyadmin của máy bạn.
 - Nếu XAMPP không chạy được thì tắt hẳn máy ảo VMware hoặc đổi cổng port mới. Ví dụ: localhost:8080
-- Link repository: https://github.com/NhatQuyenIT/WEB1, 
-- Link github template pages: bom.so/HHPC hoặc https://nhatquyenit.github.io/WEB1/
+- Link repository: https://github.com/NhatQuyenIT/WEB2 
+- Link github template pages: https://nhatquyenit.github.io/WEB2/
