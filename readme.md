@@ -10,7 +10,7 @@ Nâng cấp từ WEB1 và Sử dụng HTML, CSS, Bootstrap, jQuery, Ajax, PHP, M
 |  3  | 3122411172 | [Lương Thị Thùy Quyên](https://www.facebook.com/thuy.quyen.dangiu) | DCT122C3 |
 
 ## Demo
-
+[![Watch the video](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 *TRANG CHU 
 ![alt text](./img/Screenshots/Screenshot_16-5-2024_225045_localhost.jpeg)
